@@ -10,7 +10,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchBannerSettings = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/banner-settings');
+        const response = await axios.get('/api/banner-settings');
         setDescription(response.data.description);
         setTimer(response.data.timer);
         setLink(response.data.link);
@@ -24,7 +24,7 @@ const Dashboard = () => {
 
   const handleSave = async () => {
     try {
-      await axios.post('http://localhost:5000/api/banner-settings', { description, timer, link });
+      await axios.post('/api/banner-settings', { description, timer, link });
       alert('Banner settings updated');
     } catch (error) {
       console.error('Error updating banner settings:', error);
