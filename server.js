@@ -8,13 +8,13 @@ app.use(cors());
 app.use(express.json());
 
 const _dirname = path.dirname("")
-const buildpath = path.join(_dirname , "/build");
+const buildpath = path.join(_dirname , "build");
 
 app.use(express.static(buildpath))
 
 app.get("/", function(req, res){
   res.sendFile(
-    path.join(__dirname, "/build/index.html"),
+    path.join(__dirname, "build/index.html"),
     function(err){
       if(err){
         res.status(500).send(err);
