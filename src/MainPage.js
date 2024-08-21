@@ -10,7 +10,7 @@ const MainPage = () => {
   useEffect(() => {
     const fetchBanner = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/banner-settings');
+        const response = await axios.get('/api/banner-settings');
         setBanner(response.data);
         setTimeLeft(response.data.timer);
 
